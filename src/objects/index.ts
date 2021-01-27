@@ -1,11 +1,11 @@
-import * as atoms from './atoms'
-import * as molecules from './molecules'
-import * as quarks from './quarks'
-import * as strings from './strings'
+import * as Atom from './Atom'
+import * as Molecule from './Molecule'
+import * as Quark from './Quark'
+import * as String from './String'
 
 export {
-   atoms,
-   molecules,
-   quarks,
-   strings,
+   Atom,
+   Molecule,
+   Quark,
+   String,
 }

@@ -1,11 +1,11 @@
-import Canvas from './Canvas'
-import Canvas2D from './Canvas2D'
-import Canvas3D from './Canvas3D'
-import GlobalWrapper from './GlobalWrapper'
+import * as Atom from './Atom'
+import * as Molecule from './Molecule'
+import * as Quark from './Quark'
+import * as String from './String'
 
 export {
-   Canvas,
-   Canvas2D,
-   Canvas3D,
-   GlobalWrapper,
+   Atom,
+   Molecule,
+   Quark,
+   String,
 }

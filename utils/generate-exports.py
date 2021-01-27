@@ -29,16 +29,18 @@ def createIndexExportFile(folderPath, additional = ''):
 
 def main():
     folderNames = [
-        'components',
         'state',
         'utils',
         'scenes2D',
         'scenes3D',
-        'objects/strings',
-        'objects/quarks',
-        'objects/atoms',
-        'objects/molecules',
-        'objects/compounds',
+        'objects/String',
+        'objects/Quark',
+        'objects/Atom',
+        'objects/Molecule',
+        'components/String',
+        'components/Quark',
+        'components/Atom',
+        'components/Molecule',
     ]
 
     print('Automatic export defaults: ', folderNames)
@@ -48,7 +50,7 @@ def main():
 
         createIndexExportFile(folderPath)
 
-    folderNames = ['objects']
+    folderNames = ['components', 'objects']
 
     print('Automatic export all: ', folderNames)
 

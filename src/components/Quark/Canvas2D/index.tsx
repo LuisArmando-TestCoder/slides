@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import preset from 'canvas-preset'
-import { Canvas } from '..'
-import { getScene2DCallbacks } from '../../utils'
+import { Canvas } from '../../String'
+import { getScene2DCallbacks } from '../../../utils'
 
 interface CanvasObject {
     sceneCallbacks: Function[]
