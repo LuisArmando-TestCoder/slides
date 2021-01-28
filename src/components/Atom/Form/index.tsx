@@ -11,6 +11,7 @@ export default ({ subtitle, text, inputs, save }) => {
     return (
         <form className='form'>
             <String.Text type='subtitle'>{ subtitle }</String.Text>
+            <String.Text type='dark-paragraph'>{ text }</String.Text>
             <ul>
                 {
                     inputs.map((properties, index) => {
