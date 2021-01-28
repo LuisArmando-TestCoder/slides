@@ -1,0 +1,11 @@
+.cta-canvas {
+    position: relative;
+    display: grid;
+    place-items: center;
+
+    canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import preset from 'canvas-preset'
-import { Canvas } from '../../String'
+import { String } from '../..'
 import { getScene2DCallbacks } from '../../../utils'
 
 interface CanvasObject {
@@ -33,5 +33,5 @@ export default ({ scenes, clearFunction = null, className = 'scene', id }) => {
         runCanvas({ sceneCallbacks, clearFunction, id })
     }, [])
 
-    return <Canvas className={className} id={id}/>
+    return <String.Canvas className={className} id={id}/>
 }

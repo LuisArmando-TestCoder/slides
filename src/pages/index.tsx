@@ -1,15 +1,12 @@
 import React from 'react'
 import {
-  Canvas3D,
-  Canvas2D,
-} from '../components'
-import {
-  GlobalWrapper,
+  Quark,
+  String,
 } from '../components'
 
 export default () => (
-  <GlobalWrapper>
-    <Canvas3D id='Canvas3D' scenes={[ 'defaultScene' ]}/>
-    <Canvas2D id='Canvas2D' scenes={[ 'defaultScene' ]}/>
-  </GlobalWrapper>
+  <String.GlobalWrapper title='Home'>
+    <Quark.Canvas3D id='Canvas3D' scenes={[ 'defaultScene' ]}/>
+    <Quark.Canvas2D id='Canvas2D' scenes={[ 'defaultScene' ]}/>
+  </String.GlobalWrapper>
 )
