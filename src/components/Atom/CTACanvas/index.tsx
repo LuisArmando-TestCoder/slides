@@ -5,23 +5,37 @@ import {
 } from '../..'
 import './style.scss'
 
-export default ({ text, CTAText, scenes, action }) => {
-    const id = text.join('') + CTAText.join('')
+function getDataHash(data) {
+    const JSONLikeData = JSON.stringify(data)
+    let hash = 0
+
+    for (let i = 0; i < JSONLikeData.length; i++) {
+        const character = JSONLikeData.charCodeAt(i)
+
+        hash = ((hash << 5) - hash) + character
+        hash = hash & hash
+    }
+
+    return hash
+}
+
+export default ({ message, scenes2D, CTAAction, CTAButtonText }) => {
+    const id = `id${getDataHash(message + CTAButtonText)}`
 
     return (
         <section className='cta-canvas'>
             <Quark.Canvas2D
-                scenes={scenes}
+                scenes={scenes2D}
                 clearFunction={() => {}}
                 id={id}
             />
             <String.Text type='title'>
-                { text }
+                { message }
             </String.Text>
             <Quark.Button
-                text={CTAText}
-                click={action}
-                icon='dev-> arrow asset here'
+                text={CTAButtonText}
+                click={CTAAction}
+                icon='../../icon/arrow.svg'
             />
         </section>
     )

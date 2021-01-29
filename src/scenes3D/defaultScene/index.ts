@@ -7,6 +7,6 @@ export default () => presetScene({
             // 'setFirstPersonDirection',
             'setFirstPersonZoom',
             'setCanvasAutoFocus',
-        ])
+        ], '#Canvas3D')
     },
-})
+}, '#Canvas3D')

@@ -1,0 +1,35 @@
+.button {
+    background: var(--dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 50px;
+    padding: 5px 20px;
+    border: 0;
+    cursor: pointer;
+
+    &:hover {
+        .image {
+            margin-left: 20px;
+        }
+
+        .light-paragraph {
+            text-shadow: 0 0 10px var(--light);
+        }
+    }
+
+    &:active .light-paragraph {
+        text-shadow: 0 0 20px var(--light);
+    }
+
+    .light-paragraph {
+        transition: var(--transition-quick);
+    }
+
+    .image {
+        transition: var(--transition-quick);
+        width: 25px;
+        object-fit: contain;
+        margin-left: 10px;
+    }
+}
