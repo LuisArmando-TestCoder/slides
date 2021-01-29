@@ -12,10 +12,13 @@ interface CanvasObject {
 function runCanvas(canvasObject: CanvasObject) {
     const { sceneCallbacks, clearFunction, id } = canvasObject
     const presetObject = preset(null, `#${id}`)
-    const { draw, clear, size } = presetObject
+    const { draw, clear, size, c: canvas } = presetObject
     const clearCanvas = (clearFunction || (() => clear()))
 
-    size()
+    size({
+        width: () => canvas.parentElement.clientWidth,
+        height: () => canvas.parentElement.clientHeight,
+    })
 
     draw(() => {
         clearCanvas()

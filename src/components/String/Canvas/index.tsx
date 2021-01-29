@@ -4,10 +4,12 @@ import './style.scss'
 
 export default ({ className = 'scene', id = '' }) => {
     return (
-        <canvas
-            className={className}
-            id={id}
-            tabIndex={0}
-        />
+        <div className='canvas-container'>
+            <canvas
+                className={className}
+                id={id}
+                tabIndex={0}
+            />
+        </div>
     )
 }

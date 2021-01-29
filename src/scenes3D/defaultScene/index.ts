@@ -5,8 +5,8 @@ export default () => presetScene({
         actions.blacklistControls([
             // 'setFirstPersonPosition',
             // 'setFirstPersonDirection',
-            // 'setFirstPersonZoom'
-            // 'setCanvasAutoFocus'
+            'setFirstPersonZoom',
+            'setCanvasAutoFocus',
         ])
     },
 })
