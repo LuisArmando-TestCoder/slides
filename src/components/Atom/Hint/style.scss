@@ -7,11 +7,11 @@
     position: fixed;
     top: 25px;
     padding-right: 30px;
-    right: 0;
+    right: -100%;
     transition: var(--duration-slow);
 
-    &--hide {
-        right: -100%;
+    &--show {
+        right: 0;
     }
 
     .button {

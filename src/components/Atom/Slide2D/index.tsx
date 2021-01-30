@@ -14,21 +14,28 @@ export default ({ title, contents, out }) => {
             <String.Text type='title'>{ title }</String.Text>
             <String.Text type='subtitle'>{ contents[index].subtitle }</String.Text>
             <String.Text type='dark-paragraph'>{ contents[index].paragraph }</String.Text>
-            {
-                index < contents.length - 1 &&
-                contents.length > 1 &&
+            <div className={`
+                slide-2d__container
+                ${
+                    index < contents.length - 1 &&
+                    contents.length > 1 &&
+                    'show'
+                }
+            `}>
                 <Quark.Button
                     text={`${index + 1} / ${contents.length}`}
-                    icon='Dev-> Put an icon here'
+                    icon='../../icon/arrow.svg'
                     click={() => setIndex(index + 1)}
                 />
-            }
-            <String.Image src={contents[index].src}/>
-            <Quark.Button
-                text={index < contents.length - 1 ? 'Skip' : 'Next'}
-                icon='Dev-> Put an icon here'
-                click={out}
-            />
+            </div>
+            <String.Image src={contents[index].image}/>
+            <div className='slide-2d__container'>
+                <Quark.Button
+                    text={index < contents.length - 1 ? 'Skip' : 'Continue'}
+                    icon='../../icon/arrow.svg'
+                    click={out}
+                />
+            </div>
         </section>
     )
 }

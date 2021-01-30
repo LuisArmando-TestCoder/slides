@@ -15,5 +15,11 @@ class Properties {
 export default (properties: Properties) => {
     const Text = TextType[properties.type]
 
-    return <Text className={properties.type}>{ properties.children }</Text>
+    return (
+        <div className='text'>
+            <Text className={properties.type}>
+                { properties.children }
+            </Text>
+        </div>
+    )
 }

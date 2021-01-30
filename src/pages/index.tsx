@@ -7,6 +7,32 @@ import {
 
 export default () => (
   <String.GlobalWrapper title='Home'>
+    <Atom.Slide2D
+      contents={[
+        {
+          subtitle: 'subtitle A',
+          paragraph: `
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, 
+          pulvinar facilisis justo mollis, auctor consequat urna. Morbi a bibendum metus. 
+          Donec scelerisque sollicitudin enim eu venenatis. Duis tincidunt laoreet ex, 
+          in pretium orci vestibulum eget.
+          `,
+          image: 'https://images.pexels.com/photos/4844208/pexels-photo-4844208.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500'
+        },
+        {
+          subtitle: 'subtitle B',
+          paragraph: `
+          Class aptent taciti sociosqu ad litora torquent
+          per conubia nostra, per inceptos himenaeos. Duis pharetra luctus lacus ut 
+          vestibulum. Maecenas ipsum lacus, lacinia quis posuere ut, pulvinar vitae dolor.
+          Integer eu nibh at nisi ullamcorper sagittis id vel leo.
+          `,
+          image: 'https://images.pexels.com/photos/5345858/pexels-photo-5345858.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500'
+        },
+      ]}
+      title='Slides2D'
+      out={() => {}}
+    />
     <Atom.Form
       title='This is a form'
       text='This information will go in your certificate'

@@ -1,24 +1,26 @@
-.title {
-    font-family: var(--font-title);
-    font-size: 100px;
-    color: var(--color-dark);
-}
-
-.dark-paragraph {
-    font-family: var(--font-text);
-    font-size: 21px;
-    color: var(--color-dark);
-}
-
-.light-paragraph {
-    font-family: var(--font-text);
-    font-size: 21px;
-    color: var(--color-light);
-}
-
-.subtitle {
-    font-family: var(--font-text);
-    font-weight: bold;
-    font-size: 50px;
-    color: var(--color-dark);
+.text {
+    .title {
+        font-family: var(--font-title);
+        font-size: 70px;
+        color: var(--color-dark);
+    }
+    
+    .dark-paragraph {
+        font-family: var(--font-text);
+        font-size: 21px;
+        color: var(--color-dark);
+    }
+    
+    .light-paragraph {
+        font-family: var(--font-text);
+        font-size: 21px;
+        color: var(--color-light);
+    }
+    
+    .subtitle {
+        font-family: var(--font-text);
+        font-weight: bold;
+        font-size: 50px;
+        color: var(--color-dark);
+    }
 }
