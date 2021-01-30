@@ -1,0 +1,38 @@
+.hint {
+    z-index: 1e6;
+    background: var(--color-dark);
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 25px;
+    padding-right: 30px;
+    right: 0;
+    transition: var(--duration-slow);
+
+    &--hide {
+        right: -100%;
+    }
+
+    .button {
+        background: var(--color-light);
+        border-radius: 0;
+        margin-right: 10px;
+
+        &:hover .light-paragraph {
+            text-shadow: 0 0 15px var(--color-dark);
+        }
+
+        &:active .light-paragraph {
+            text-shadow: 0 0 25px var(--color-dark);
+        }
+
+        .light-paragraph {
+            color: var(--color-dark);
+        }
+    }
+
+    .button {
+        padding: 20px 30px;
+    }
+}

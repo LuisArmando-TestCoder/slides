@@ -1,0 +1,35 @@
+.form {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+
+    input {
+        font-family: var(--font-text);
+        padding: 5px 20px;
+        margin: 10px 0;
+        width: 100%;
+    }
+
+    & > div {
+        width: min(calc(100% - 50px), 420px);
+    }
+
+    &__text p {
+        margin-top: 50px;
+    }
+
+    &__inputs {
+        display: flex;
+        flex-wrap: wrap;
+        font-family: serif;
+
+        &__list {
+            width: 100%;
+            margin-bottom: 40px;
+        }
+        
+        .button {
+            align-self: flex-end;
+        }
+    }
+}

@@ -4,8 +4,10 @@ import {
 } from '../../'
 import './style.scss'
 
-export default ({ click, text = '', icon = null }) => (
-    <button className='button' onClick={click}>
+type ButtonTypes = 'button' | 'reset' | 'submit'
+
+export default ({ click, text = '', icon = null, type = 'button' as ButtonTypes }) => (
+    <button type={type} className='button' onClick={click}>
         <String.Text type='light-paragraph'>
             { text }
         </String.Text>

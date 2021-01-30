@@ -1,5 +1,5 @@
 .button {
-    background: var(--dark);
+    background: var(--color-dark);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -7,6 +7,7 @@
     padding: 5px 20px;
     border: 0;
     cursor: pointer;
+    outline: none;
 
     &:hover {
         .image {
@@ -14,20 +15,20 @@
         }
 
         .light-paragraph {
-            text-shadow: 0 0 10px var(--light);
+            text-shadow: 0 0 10px var(--color-light);
         }
     }
 
     &:active .light-paragraph {
-        text-shadow: 0 0 20px var(--light);
+        text-shadow: 0 0 15px var(--color-light);
     }
 
     .light-paragraph {
-        transition: var(--transition-quick);
+        transition: var(--duration-quick);
     }
 
     .image {
-        transition: var(--transition-quick);
+        transition: var(--duration-quick);
         width: 25px;
         object-fit: contain;
         margin-left: 10px;

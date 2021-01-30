@@ -7,6 +7,24 @@ import {
 
 export default () => (
   <String.GlobalWrapper title='Home'>
+    <Atom.Form
+      title='This is a form'
+      text='This information will go in your certificate'
+      save={() => {}}
+      inputs={[
+        {
+          placeholder: 'Your name',
+          name: 'name',
+          type: 'text',
+        },
+        {
+          placeholder: 'Your age',
+          name: 'age',
+          type: 'date',
+        },
+      ]}
+    />
+    <Atom.Hint text='This is a hint' showWhen={true}/>
     <Atom.CTACanvas
       scenes2D={['defaultScene']}
       CTAAction={() => {}}

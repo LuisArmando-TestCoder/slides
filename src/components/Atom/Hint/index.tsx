@@ -10,9 +10,8 @@ export default ({ text, showWhen }) => {
 
     return (
         <div className={`hint hint--${show ?? showWhen ? 'show' : 'hide'}`}>
-            <i>!</i>
+            <Quark.Button click={() => setShow(false)} text='X'/>
             <String.Text type='light-paragraph'>{ text }</String.Text>
-            <Quark.Button click={() => setShow(false)}/>
         </div>
     )
 }

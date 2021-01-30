@@ -1,5 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
 html {
-    --dark: #101010;
-    --light: #f0f0f0;
-    --transition-quick: .3s;
+    --font-title: 'Syncopate', serif;
+    --font-text: 'Open Sans', sans-serif;
+    --color-dark: #101010;
+    --color-light: #f0f0f0;
+    --duration-quick: .3s;
+    --duration-medium: 1s;
+    --duration-slow: 3s;
 }

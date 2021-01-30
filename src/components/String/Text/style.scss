@@ -1,27 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
-
 .title {
-    font-family: 'Syncopate', serif;
-    font-size: 10vw;
-    color: var(--dark);
+    font-family: var(--font-title);
+    font-size: 100px;
+    color: var(--color-dark);
 }
 
 .dark-paragraph {
-    font-family: 'Open Sans', sans-serif;
+    font-family: var(--font-text);
     font-size: 21px;
-    color: var(--dark);
+    color: var(--color-dark);
 }
 
 .light-paragraph {
-    font-family: 'Open Sans', sans-serif;
+    font-family: var(--font-text);
     font-size: 21px;
-    color: var(--light);
+    color: var(--color-light);
 }
 
 .subtitle {
-    font-family: 'Open Sans', sans-serif;
+    font-family: var(--font-text);
     font-weight: bold;
-    font-size: 5vw;
-    color: var(--dark);
+    font-size: 50px;
+    color: var(--color-dark);
 }
