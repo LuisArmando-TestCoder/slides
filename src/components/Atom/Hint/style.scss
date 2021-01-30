@@ -6,7 +6,6 @@
     justify-content: space-between;
     position: fixed;
     top: 25px;
-    padding-right: 30px;
     right: -100%;
     transition: var(--duration-slow);
 
@@ -14,10 +13,14 @@
         right: 0;
     }
 
+
+    & > .text {
+        margin: 0 30px;
+    }
+
     .button {
         background: var(--color-light);
         border-radius: 0;
-        margin-right: 10px;
 
         &:hover .light-paragraph {
             text-shadow: 0 0 15px var(--color-dark);
