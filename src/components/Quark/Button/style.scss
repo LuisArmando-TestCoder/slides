@@ -9,6 +9,10 @@
     cursor: pointer;
     outline: none;
 
+    &--hide {
+        opacity: .5;
+    }
+
     &:hover {
         .image {
             margin-left: 20px;

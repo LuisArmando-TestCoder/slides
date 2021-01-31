@@ -1,5 +1,6 @@
 import React from 'react'
 import {
+  Molecule,
   Atom,
   Quark,
   String,
@@ -7,7 +8,7 @@ import {
 
 export default () => (
   <String.GlobalWrapper title='Home'>
-    <Atom.Slide2D
+    <Molecule.Slide2D
       contents={[
         {
           subtitle: 'subtitle A',

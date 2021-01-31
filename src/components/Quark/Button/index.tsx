@@ -6,8 +6,8 @@ import './style.scss'
 
 type ButtonTypes = 'button' | 'reset' | 'submit'
 
-export default ({ click, text = '', icon = null, type = 'button' as ButtonTypes }) => (
-    <button type={type} className='button' onClick={click}>
+export default ({ click, text = '', icon = null, disableWhen = false, type = 'button' as ButtonTypes }) => (
+    <button disabled={disableWhen} type={type} className={`button button--${disableWhen && 'hide'}`} onClick={click}>
         <String.Text type='light-paragraph'>
             { text }
         </String.Text>

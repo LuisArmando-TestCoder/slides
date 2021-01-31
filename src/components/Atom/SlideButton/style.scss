@@ -1,0 +1,9 @@
+.slide-button {
+    display: inline-flex;
+    border-radius: 50px;
+    background: var(--color-dark);
+
+    & > .button:nth-child(1) {
+        transform: rotate(180deg);
+    }
+}

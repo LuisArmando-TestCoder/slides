@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import {
     String,
     Quark,
+    Atom,
 } from '../..'
 import './style.scss'
 
@@ -14,18 +15,10 @@ export default ({ title, contents, out }) => {
             <String.Text type='title'>{ title }</String.Text>
             <String.Text type='subtitle'>{ contents[index].subtitle }</String.Text>
             <String.Text type='dark-paragraph'>{ contents[index].paragraph }</String.Text>
-            <div className={`
-                slide-2d__container
-                ${
-                    index < contents.length - 1 &&
-                    contents.length > 1 &&
-                    'show'
-                }
-            `}>
-                <Quark.Button
-                    text={`${index + 1} / ${contents.length}`}
-                    icon='../../icon/arrow.svg'
-                    click={() => setIndex(index + 1)}
+            <div className='slide-2d__container'>
+                <Atom.SlideButton
+                    onSlide={setIndex}
+                    length={contents.length}
                 />
             </div>
             <String.Image src={contents[index].image}/>
