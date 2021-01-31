@@ -34,6 +34,10 @@ export default () => (
       title='Slides2D'
       out={() => {}}
     />
+    <Atom.SlideButton
+      onSlide={() => {}}
+      length={15}
+    />
     <Atom.Form
       title='This is a form'
       text='This information will go in your certificate'

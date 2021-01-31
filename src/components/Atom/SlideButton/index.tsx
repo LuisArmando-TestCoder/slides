@@ -19,7 +19,14 @@ export default ({ onSlide, length }) => {
                     setIndex(Math.max(0, index - 1))
                     onSlide(index)
                 }}/>
-            <String.Text type='light-paragraph'>{index + 1} / {length}</String.Text>
+            <String.Text type='light-paragraph'>{
+                (index + 1)
+                .toString()
+                .padStart(
+                    length.toString().length,
+                    '0'
+                )} / {length}
+            </String.Text>
             <Quark.Button
                 disableWhen={index + 1 === length}
                 icon='../../icon/arrow.svg'
