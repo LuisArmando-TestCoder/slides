@@ -15,6 +15,11 @@
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 50px;
 
+    & > .text > .dark-paragraph {
+        max-height: min(50vh, 300px);
+        overflow: auto;
+    }
+
     & > .text:nth-child(1) {
         grid-area: a;
     }
