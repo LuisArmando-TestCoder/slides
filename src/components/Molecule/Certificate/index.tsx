@@ -52,8 +52,8 @@ async function getUser(hash: string): Promise<User> {
     }
 }
 
-function getURLHash(): string {
-    return new URLSearchParams(window.location.search).get('hash')
+function getURLHash(window): string {
+    return new URLSearchParams(location.search).get('hash')
 }
 
 function setAppHash(setStateHash, hash) {
@@ -76,7 +76,7 @@ const weekDays = [
 
 export default ({ hash }) => {
     const [user, setUser] = useState(null)
-    const URLHash = getURLHash()
+    const URLHash = getURLHash(window)
     const [stateHash, setStateHash] = useRecoilState(hashState)
     const localStorageHash = localStorage.getItem('hash')
 
