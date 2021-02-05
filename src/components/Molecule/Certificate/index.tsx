@@ -22,24 +22,10 @@ class User {
 
 function getComposedUser(parsedData): User {
     try {
-        const {
-            name,
-            hash,
-            date,
-            email,
-        } = parsedData
-        const user = {
-            name,
-            hash,
-            date: {
-                // 'YYYY-MM-DD'
-                inscription: new Date(date.inscription),
-                completion: new Date(date.completion),
-            },
-            email,
-        }
+        const { data, hash, date } = parsedData
+        const { name, email } = data
 
-        return user
+        return { name, hash, date, email }
     } catch (error) {
         throw error
     }
@@ -48,11 +34,12 @@ function getComposedUser(parsedData): User {
 async function getUser(hash: string): Promise<User> {
     if (!hash) return null
 
-    const response = await fetch(`https://data-poster.herokuapp.com/data/${hash}`)
+    const targetUrl = `https://open-certificates.herokuapp.com/data/${hash}`
+    const blob = await fetch(targetUrl)
 
-    if (!response) return null
+    if (!blob) return null
 
-    const json = await response.json()
+    const json = await blob.json()
     const { data } = json
 
     try {
@@ -69,9 +56,12 @@ function getURLHash(): string {
     return new URLSearchParams(window.location.search).get('hash')
 }
 
-function printCertificate(user: User) {
-
+function setAppHash(setStateHash, hash) {
+    setStateHash(hash)
+    localStorage.setItem('hash', hash)
 }
+
+
 const months = [
     'january', 'february', 'march',
     'april', 'may', 'june',
@@ -84,7 +74,7 @@ const weekDays = [
     'friday', 'saturday', 'sunday',
 ]
 
-export default () => {
+export default ({ hash }) => {
     const [user, setUser] = useState(null)
     const URLHash = getURLHash()
     const [stateHash, setStateHash] = useRecoilState(hashState)
@@ -93,14 +83,16 @@ export default () => {
     useEffect(() => {
         (async () => {
             const user = await getUser(
-                URLHash
+                hash
+             || URLHash
              || stateHash
              || localStorageHash
             )
 
-            setStateHash(user.hash)
-
-            setUser(user)
+            if (user) {
+                setAppHash(setStateHash, user.hash)
+                setUser(user)
+            }
         })()
     })
 
@@ -123,24 +115,20 @@ export default () => {
                                     The current certificate guarantees
                                     that {user.name},
                                     under the email of {user.email},
-                                    that on the month of {months[user.date.completion.getMonth()]},
-                                    {weekDays[user.date.completion.getDay()]}
+                                    that on the month of {months[user.date.getMonth()]},
+                                    {weekDays[user.date.getDay()]}
                                     {(day => {
                                         if (day === 1) return `${day}st`
                                         else if (day === 2) return `${day}nd`
                                         else if (day === 3) return `${day}rd`
                                         return `${day}th`
-                                    })(user.date.completion.getUTCDate())}
+                                    })(user.date.getUTCDate())}
                                     mastered the course of 'this course name'
 
                                     Under the observance of 'organization name'
                                 </String.Text>
                                 <String.Image src='some image'/>
                             </div>
-                            <Quark.Button
-                                text='Press to print'
-                                click={() => printCertificate(user)}
-                            />
                         </>
                         :
                         <>

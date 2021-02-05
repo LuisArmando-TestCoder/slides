@@ -8,6 +8,7 @@ import {
 
 export default () => (
   <String.GlobalWrapper title='Home'>
+    <Molecule.Certificate hash='5076023494876245778'/>
     <Quark.Loading canShow={true}/>
     <Quark.QRImage value='Text'/>
     <Molecule.Slide2D
