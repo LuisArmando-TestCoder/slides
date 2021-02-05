@@ -77,10 +77,10 @@ const weekDays = [
 export default ({ hash }) => {
     const [user, setUser] = useState(null)
     const [stateHash, setStateHash] = useRecoilState(hashState)
-    const localStorageHash = localStorage.getItem('hash')
-
+    
     useEffect(() => {
         (async () => {
+            const localStorageHash = localStorage.getItem('hash')
             const URLHash = getURLHash(window)
             const user = await getUser(
                 hash
