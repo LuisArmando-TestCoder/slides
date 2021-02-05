@@ -9,7 +9,7 @@ export default ({
     size = 280,
     background = '#fff',
     foreground = '#000',
-    getValueSetter = ((setter: React.SetStateAction<any>) => {})
+    getValueSetter = ((setter: React.SetStateAction<any>): void => {})
 }) => {
     const [QRValue, setQRValue] = useState(value)
     const [dataUrl] = useQrious({

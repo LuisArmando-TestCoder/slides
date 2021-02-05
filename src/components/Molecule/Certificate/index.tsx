@@ -1,112 +1,112 @@
 import React, { useState, useEffect } from 'react'
-// import {
-//     Quark,
-//     String,
-// } from '../..'
-// import {
-//     useRecoilState,
-// } from 'recoil'
-// import {
-//     hash as hashState,
-// } from '../../../state'
+import {
+    Quark,
+    String,
+} from '../..'
+import {
+    useRecoilState,
+} from 'recoil'
+import {
+    hash as hashState,
+} from '../../../state'
 
-// class User {
-//     name: string
-//     hash: string
-//     date: {
-//         inscription: Date,
-//         completion: Date
-//     }
-//     email: string
-// }
+class User {
+    name: string
+    hash: string
+    date: {
+        inscription: Date,
+        completion: Date
+    }
+    email: string
+}
 
-// function getComposedUser(parsedData): User {
-//     try {
-//         const {
-//             name,
-//             hash,
-//             date,
-//             email,
-//         } = parsedData
-//         const user = {
-//             name,
-//             hash,
-//             date: {
-//                 // 'YYYY-MM-DD'
-//                 inscription: new Date(date.inscription),
-//                 completion: new Date(date.completion),
-//             },
-//             email,
-//         }
+function getComposedUser(parsedData): User {
+    try {
+        const {
+            name,
+            hash,
+            date,
+            email,
+        } = parsedData
+        const user = {
+            name,
+            hash,
+            date: {
+                // 'YYYY-MM-DD'
+                inscription: new Date(date.inscription),
+                completion: new Date(date.completion),
+            },
+            email,
+        }
 
-//         return user
-//     } catch (error) {
-//         throw error
-//     }
-// }
+        return user
+    } catch (error) {
+        throw error
+    }
+}
 
-// async function getUser(hash: string): Promise<User> {
-//     if (!hash) return null
+async function getUser(hash: string): Promise<User> {
+    if (!hash) return null
 
-//     const response = await fetch(`https://data-poster.herokuapp.com/data/${hash}`)
+    const response = await fetch(`https://data-poster.herokuapp.com/data/${hash}`)
 
-//     if (!response) return null
+    if (!response) return null
 
-//     const json = await response.json()
-//     const { data } = json
+    const json = await response.json()
+    const { data } = json
 
-//     try {
-//         const parsedData = JSON.parse(data)
-//         const user = getComposedUser(parsedData)
+    try {
+        const parsedData = JSON.parse(data)
+        const user = getComposedUser(parsedData)
 
-//         return user
-//     } catch {
-//         return null
-//     }
-// }
+        return user
+    } catch {
+        return null
+    }
+}
 
-// function getURLHash(): string {
-//     return new URLSearchParams(window.location.search).get('hash')
-// }
+function getURLHash(): string {
+    return new URLSearchParams(window.location.search).get('hash')
+}
 
-// function printCertificate(user: User) {
+function printCertificate(user: User) {
 
-// }
-// const months = [
-//     'january', 'february', 'march',
-//     'april', 'may', 'june',
-//     'july', 'august', 'september',
-//     'october', 'november', 'december',
-// ]
+}
+const months = [
+    'january', 'february', 'march',
+    'april', 'may', 'june',
+    'july', 'august', 'september',
+    'october', 'november', 'december',
+]
 
-// const weekDays = [
-//     'monday', 'tuesday', 'wednesday', 'thursday',
-//     'friday', 'saturday', 'sunday',
-// ]
+const weekDays = [
+    'monday', 'tuesday', 'wednesday', 'thursday',
+    'friday', 'saturday', 'sunday',
+]
 
 export default () => {
-    // const [user, setUser] = useState(null)
-    // const URLHash = getURLHash()
-    // const [stateHash, setStateHash] = useRecoilState(hashState)
-    // const localStorageHash = localStorage.getItem('hash')
+    const [user, setUser] = useState(null)
+    const URLHash = getURLHash()
+    const [stateHash, setStateHash] = useRecoilState(hashState)
+    const localStorageHash = localStorage.getItem('hash')
 
-    // useEffect(() => {
-    //     (async () => {
-    //         const user = await getUser(
-    //             URLHash
-    //          || stateHash
-    //          || localStorageHash
-    //         )
+    useEffect(() => {
+        (async () => {
+            const user = await getUser(
+                URLHash
+             || stateHash
+             || localStorageHash
+            )
 
-    //         setStateHash(user.hash)
+            setStateHash(user.hash)
 
-    //         setUser(user)
-    //     })()
-    // })
+            setUser(user)
+        })()
+    })
 
     return (
         <>
-            {/* {
+            {
                 user ?
                 <section className='certificate'>
                     {
@@ -152,7 +152,7 @@ export default () => {
                 <>
                     Certificate section
                 </>
-            } */}
+            }
         </>
     )
 }

@@ -8,6 +8,7 @@ import {
 
 export default () => (
   <String.GlobalWrapper title='Home'>
+    <Quark.Loading canShow={true}/>
     <Quark.QRImage value='Text'/>
     <Molecule.Slide2D
       contents={[
