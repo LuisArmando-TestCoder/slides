@@ -6,6 +6,23 @@
     width: min(calc(100% - 50px), 1024px);
     margin: auto;
     display: grid;
+    // a = title
+    // b = subtitle
+    // c = text
+    // d = slideButton
+    // e = image
+    // f = skipButton
+
+    @media screen and (max-width: 640px) {
+        grid-template-areas:    'a'
+                                'b'
+                                'e'
+                                'c'
+                                'd'
+                                'f';
+        grid-template-columns: 1fr;
+    }
+
     grid-template-areas: 'a .'
                          'b e'
                          'c e'
