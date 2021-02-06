@@ -4,6 +4,12 @@ import {
     String
 } from '../..'
 
+const QRImage = ({ QRValue, qrious }) => {
+    const [dataUrl] = useQrious({ value: QRValue, ...qrious })
+
+    return <String.Image src={dataUrl}/>
+}
+
 export default ({
     value,
     size = 280,
@@ -12,18 +18,14 @@ export default ({
     getValueSetter = ((setter: React.SetStateAction<any>): void => {})
 }) => {
     const [QRValue, setQRValue] = useState(value)
-    const [dataUrl] = useQrious({
-        value: QRValue,
-        size,
-        background,
-        foreground,
-    })
+    const [Image, setImage] = useState(null)
 
     useEffect(() => {
         getValueSetter(setQRValue)
+        setImage(<QRImage QRValue={QRValue} qrious={{ size, background, foreground }}/>)
     }, [])
 
     return (
-        <String.Image src={dataUrl}/>
+        <>{ Image }</>
     )
 }
